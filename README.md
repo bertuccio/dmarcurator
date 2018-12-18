@@ -1,8 +1,6 @@
 ## dmarcurator
 
-Imports DMARC report XML into a file.
-
-- [More info on email authentication](https://jl.ly/Email/authcheat.html)
+Parse DMARC report XML into a file.
 
 ## install
 
