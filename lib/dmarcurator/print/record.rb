@@ -25,9 +25,8 @@ module Dmarcurator
         file.puts "Auth Failed DKIM selector: #{parsed.auth_dkim_selector}"
         file.puts "Auth Failed SPF domain: #{parsed.auth_spf_domain}"
         file.puts "Auth Failed SPF result: #{parsed.auth_spf_result}"
-        file.close()
+        file.close
       end
-
     end
   end
 end

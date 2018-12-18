@@ -15,7 +15,7 @@ module Dmarcurator
         elsif parsed_xml
           @doc = parsed_xml
         else
-          raise "Either :xml or :parsed_xml are required"
+          raise 'Either :xml or :parsed_xml are required'
         end
       end
     end

@@ -30,7 +30,7 @@ module Dmarcurator
         file.puts "Policy PCT: #{parsed.policy_pct}"
         file.puts "Error: #{parsed.error}"
         file.puts '------------------ Records Failures ------------------' unless parsed.records.empty?
-        file.close()
+        file.close
         parsed.records.each do |parsed_record|
           Record.print_parsed(output: output, parsed: parsed_record)
         end
