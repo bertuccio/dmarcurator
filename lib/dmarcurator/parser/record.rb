@@ -51,6 +51,18 @@ module Dmarcurator
       def auth_spf_result
         doc.locate('auth_results/spf/result')[0].text
       end
+
+      def ptr
+        lookup(source_ip)
+      end
+
+      private
+
+      def lookup(ip)
+        return Resolv.getname(ip)
+      rescue Resolv::ResolvError
+        nil
+      end
     end
   end
 end

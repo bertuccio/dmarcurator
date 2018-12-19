@@ -13,7 +13,9 @@ module Dmarcurator
 
       def self.print_parsed(output:, parsed:)
         file = open_file(output: output)
+        file.puts '------------------ Record ------------------'
         file.puts "Source IP: #{parsed.source_ip}"
+        file.puts "PTR: #{parsed.ptr}"
         file.puts "Count: #{parsed.count}"
         file.puts "Disposition: #{parsed.disposition}"
         file.puts "Policy result DKIM #{parsed.policy_result_dkim}"
