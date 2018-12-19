@@ -1,4 +1,5 @@
 # frozen_string_literal: true
+
 module Dmarcurator
   module Parser
     # Parsed XML of a report
@@ -59,6 +60,22 @@ module Dmarcurator
         doc.locate('feedback/record').map do |record|
           Record.new(parsed_xml: record)
         end
+      end
+
+      def auth_failed_dkim_domains
+        records.reject { |r| r.auth_dkim_result == 'pass' }
+      end
+
+      def auth_failed_spf_domains
+        records.reject { |r| r.auth_spf_result == 'pass' }
+      end
+
+      def auth_passed_dkim_domains
+        records.select { |r| r.auth_dkim_result == 'pass' }
+      end
+
+      def auth_passed_spf_domains
+        records.select { |r| r.auth_spf_result == 'pass' }
       end
     end
   end
