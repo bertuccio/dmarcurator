@@ -6,10 +6,6 @@ module Dmarcurator
     class Report
       attr_reader :output
 
-      REPORT_ATTRIBUTES = %w(org_name email extra_contact_info dmarc_report_id
-                            error begin_at end_at policy_domain policy_adkim
-                            policy_aspf policy_p policy_sp policy_pct)
-
       def self.open_file(output:)
         return $stdout.dup if output.nil? || output.empty?
         File.open(output, 'w')

@@ -43,7 +43,7 @@ module Dmarcurator
         end
 
         opt_parser.parse!(options)
-        if !params[:reports_path]
+        unless params[:reports_path]
           puts 'Dmarcurator can parse DMARC reports into a readable file -> Set --o and --reports-path)'
           exit 0
         end
